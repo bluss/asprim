@@ -1,6 +1,6 @@
 #![no_std]
 
-/// Cast to an primitive numeric type using `as`.
+/// Cast to a primitive numeric type using `as`.
 ///
 /// `AsPrim` converts any primitive numeric type to any other,
 /// using the regular cast operator `as`.
@@ -14,7 +14,7 @@
 /// {
 ///     let mut sum = 0.;
 ///     for elt in data {
-///         sum += elt.as_::<f64>();
+///         sum += elt.as_f64();
 ///     }
 ///     sum /= data.len() as f64;
 ///     sum.as_()
