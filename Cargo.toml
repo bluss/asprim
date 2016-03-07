@@ -5,6 +5,9 @@ authors = ["bluss"]
 
 description = "Cast any primitive numeric type to any other using `as` with the AsPrim trait."
 
+repository = "https://github.com/bluss/asprim"
+documentation = ""
+
 keywords = ["cast", "numerics", "no_std"]
 
 [dependencies]
