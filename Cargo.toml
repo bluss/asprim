@@ -1,6 +1,10 @@
 [package]
 name = "asprim"
 version = "0.1.0"
-authors = ["bluss <bluss@users.noreply.github.com>"]
+authors = ["bluss"]
+
+description = "Cast any primitive numeric type to any other using `as` with the AsPrim trait."
+
+keywords = ["cast", "numerics"]
 
 [dependencies]
