@@ -1,3 +1,4 @@
+#![no_std]
 
 /// Cast to an primitive numeric type using `as`.
 ///

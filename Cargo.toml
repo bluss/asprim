@@ -5,6 +5,6 @@ authors = ["bluss"]
 
 description = "Cast any primitive numeric type to any other using `as` with the AsPrim trait."
 
-keywords = ["cast", "numerics"]
+keywords = ["cast", "numerics", "no_std"]
 
 [dependencies]
