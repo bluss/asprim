@@ -10,5 +10,3 @@ repository = "https://github.com/bluss/asprim"
 documentation = "https://bluss.github.io/asprim/asprim/"
 
 keywords = ["cast", "numerics", "no_std"]
-
-[dependencies]
