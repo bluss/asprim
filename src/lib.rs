@@ -1,4 +1,5 @@
 #![no_std]
+#![doc(html_root_url="https://docs.rs/asprim/0.1/")]
 
 /// Cast to a primitive numeric type using `as`.
 ///

@@ -7,6 +7,6 @@ license = "MIT/Apache-2.0"
 description = "Cast any primitive numeric type to any other using `as` with the AsPrim trait."
 
 repository = "https://github.com/bluss/asprim"
-documentation = "https://bluss.github.io/asprim/asprim/"
+documentation = "https://docs.rs/asprim/"
 
 keywords = ["cast", "numerics", "no_std"]
