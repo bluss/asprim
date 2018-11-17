@@ -25,9 +25,16 @@
 ///     3.1415926535897932384626433.as_()
 /// }
 /// ```
+///
+/// # Rust Version
+///
+/// Requires Rust 1.26 or later due to supporting as_u128
+///
 pub trait AsPrim : 'static + Copy {
     fn as_usize(self) -> usize;
     fn as_isize(self) -> isize;
+    fn as_u128(self) -> u128;
+    fn as_i128(self) -> i128;
     fn as_u64(self) -> u64;
     fn as_i64(self) -> i64;
     fn as_u32(self) -> u32;
@@ -38,7 +45,7 @@ pub trait AsPrim : 'static + Copy {
     fn as_i8(self) -> i8;
     fn as_f32(self) -> f32;
     fn as_f64(self) -> f64;
-    fn cast_from<T: AsPrim>(T) -> Self;
+    fn cast_from<T: AsPrim>(_: T) -> Self;
     /// Cast self to the type `T`
     #[inline(always)]
     fn as_<T: AsPrim>(self) -> T {
@@ -54,6 +61,10 @@ macro_rules! as_prim_impl {
                 fn as_usize(self) -> usize { self as usize }
                 #[inline(always)]
                 fn as_isize(self) -> isize { self as isize }
+                #[inline(always)]
+                fn as_u128(self) -> u128 { self as u128 }
+                #[inline(always)]
+                fn as_i128(self) -> i128 { self as i128 }
                 #[inline(always)]
                 fn as_u64(self) -> u64 { self as u64 }
                 #[inline(always)]
@@ -84,13 +95,15 @@ macro_rules! as_prim_impl {
 }
 
 as_prim_impl!{as_u8 u8 as_i8 i8 as_u16 u16 as_i16 i16 as_u32 u32 as_i32 i32
+              as_u128 u128 as_i128 i128
               as_u64 u64 as_i64 i64 as_usize usize as_isize isize as_f32 f32 as_f64 f64}
 
 #[cfg(test)]
 mod tests {
-    use AsPrim;
+    use super::AsPrim;
     #[test]
     fn it_works() {
         assert_eq!(1.as_::<f32>(), 1.0);
+        assert_eq!(1i128.as_::<f32>(), 1.0);
     }
 }
